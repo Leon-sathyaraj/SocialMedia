@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import './register.scss'
-
 const Register = () => {
   return (
     <div className="register">
@@ -12,7 +12,7 @@ const Register = () => {
         {/* Welcome to Friends Book */}
         </p>
         <span>Do you have an account?</span>
-          <button>Login</button>
+        <Link to ="/login">  <button>Login</button></Link>
       </div>
       <div className="right">
         <h1>Register</h1>
