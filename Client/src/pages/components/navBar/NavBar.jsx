@@ -9,7 +9,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { GridView } from "@mui/icons-material";
+import { Email, GridView, NotificationsOutlined } from "@mui/icons-material";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 const NavBar = () => {
   return (
@@ -20,9 +21,27 @@ const NavBar = () => {
         </Link>
         <HomeOutlinedIcon />
         <DarkModeOutlinedIcon />
-        <GridViewOutlinedIcon />{" "}
+        <GridViewOutlinedIcon />
+        <div className="search">
+          <SearchOutlinedIcon />
+          <input type="text" placeholder="Search..." />
+        </div>
       </div>
-      <div className="right"></div>
+      <div className="right">
+        <Link to="/:id/Game Profile" style={{ textDecoration: "none" }}>
+          <CurrencyExchangeIcon />
+        </Link>
+        <PersonOutlinedIcon />
+        <EmailOutlinedIcon />
+        <NotificationsOutlinedIcon />
+        <div className="user">
+          <img
+            src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+            alt=""
+          />
+          <span>Leon</span>
+        </div>
+      </div>
     </div>
   );
 };

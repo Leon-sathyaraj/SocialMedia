@@ -16,7 +16,7 @@ import RightBar from "./pages/components/rightBar/RightBar";
 import LeftBar from "./pages/components/leftBar/LeftBar";
 
 function App() {
-  const currentUser = false;
+  const currentUser = true;
 
   const Layout = () => {
     return (
@@ -42,7 +42,6 @@ function App() {
       path: "/",
       element: (
         <ProtectedRoute>
-          to protect route
           <Layout />
         </ProtectedRoute>
       ),
