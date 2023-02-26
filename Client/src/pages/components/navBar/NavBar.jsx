@@ -10,13 +10,16 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Email, GridView, NotificationsOutlined } from "@mui/icons-material";
-import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import GameProfile from "../gameProfile/GameProfile";
 
 const NavBar = () => {
   return (
     <div className="navbar">
       <div className="left">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link
+          to="/"
+          style={{ textDecoration: "none", outline: "none" }} // doesnt seem to work for now
+        >
           <span>FriendsBook</span>
         </Link>
         <HomeOutlinedIcon />
@@ -28,9 +31,6 @@ const NavBar = () => {
         </div>
       </div>
       <div className="right">
-        <Link to="/:id/Game Profile" style={{ textDecoration: "none" }}>
-          <CurrencyExchangeIcon />
-        </Link>
         <PersonOutlinedIcon />
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
