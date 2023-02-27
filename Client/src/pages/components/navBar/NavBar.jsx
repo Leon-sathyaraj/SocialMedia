@@ -1,5 +1,5 @@
 import React from "react";
-import "./navBar.scss";
+import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
