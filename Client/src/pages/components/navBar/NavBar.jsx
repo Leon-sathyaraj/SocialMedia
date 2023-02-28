@@ -10,7 +10,6 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Email, GridView, NotificationsOutlined } from "@mui/icons-material";
-import GameProfile from "../gameProfile/GameProfile";
 
 const NavBar = () => {
   return (
