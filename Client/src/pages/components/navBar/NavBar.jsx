@@ -1,5 +1,5 @@
-import React from "react";
-import "./navBar.scss";
+import React,{useContext} from "react";
+import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,9 +10,10 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Email, GridView, NotificationsOutlined } from "@mui/icons-material";
-import GameProfile from "../gameProfile/GameProfile";
+import { AuthContext } from "../../context/auth";
 
 const NavBar = () => {
+  const {currentUser} = useContext(AuthContext)
   return (
     <div className="navbar">
       <div className="left">
@@ -36,10 +37,10 @@ const NavBar = () => {
         <NotificationsOutlinedIcon />
         <div className="user">
           <img
-            src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+            src={currentUser.profilePic}
             alt=""
           />
-          <span>Leon</span>
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

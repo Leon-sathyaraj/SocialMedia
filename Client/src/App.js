@@ -1,8 +1,9 @@
-import "./App.css";
+import "../src/style.scss";
 import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
+import { useContext } from "react";
 import {
   Navigate,
   createBrowserRouter,
@@ -13,20 +14,24 @@ import {
 import NavBar from "./pages/components/navBar/NavBar";
 import RightBar from "./pages/components/rightBar/RightBar";
 import LeftBar from "./pages/components/leftBar/LeftBar";
+import { AuthContext } from "./pages/context/auth";
 
 function App() {
-  const currentUser = true;
+  const {currentUser} = useContext(AuthContext)
 
   const Layout = () => {
     return (
+  
       <div>
+          <div className="theme-dark"></div>
         <NavBar />
-        <div style={{ display: "flex" }}></div>
+        <div style={{ display: "flex" }}>
         <LeftBar />
         <div style={{ flex: 6 }}>
           <Outlet />
         </div>
         <RightBar />
+      </div>
       </div>
     );
   };
