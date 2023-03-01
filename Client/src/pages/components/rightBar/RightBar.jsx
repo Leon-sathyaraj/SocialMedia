@@ -44,7 +44,7 @@ const RightBar = () => {
               />
               <span>Leon</span>
             </div>
-            <div className="buttons">
+            <div className="">
             1 minute ago
             </div>
           </div>
@@ -56,7 +56,7 @@ const RightBar = () => {
               />
               <span>Leon</span>
             </div>
-            <div className="buttons">
+            <div className="">
 1 minute ago
             </div>
           </div>
