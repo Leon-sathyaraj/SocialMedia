@@ -8,8 +8,8 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 const Post = ({post}) => {
-
     const liked = false;
+
     return (
         <div className='post'>
         <div className='container'>
@@ -25,10 +25,24 @@ const Post = ({post}) => {
             </div>
             <MoreHorizIcon/>
         </div> 
-        <div className='content'></div>
+        <div className='content'>
         <p>{post.desc}</p>
         <img src={post.img} alt=''/>
-            <div className='info'></div>
+        </div>
+            <div className='info'>
+            <div className='item'>
+            {liked ?<FavoriteOutlinedIcon/> : <FavoriteBorderOutlinedIcon/>}
+            19 likes
+             </div>
+             <div className='item'>
+             <TextsmsOutlinedIcon/>
+       15 comments
+             </div>
+             <div className='item'>
+             <ShareOutlinedIcon/>
+       Share
+             </div>
+        </div>
         </div>
         </div>
     );
