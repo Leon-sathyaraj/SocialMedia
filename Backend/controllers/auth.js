@@ -1,7 +1,7 @@
 import { db } from "../connect"
 
 export const login = (req,res) =>{
-
+//test
 
 const q = "SELECT FROM users where username = ?"
 
