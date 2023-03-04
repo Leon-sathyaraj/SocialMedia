@@ -1,3 +1,3 @@
-export const getUser = (req,res) => {
-    //todo
-}
+export const getUser = (req, res) => {
+  //todo
+};

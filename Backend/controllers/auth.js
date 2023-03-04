@@ -1,24 +1,37 @@
-import { db } from "../connect"
+import { db } from "../connect.js";
 
-export const login = (req,res) =>{
-//test
+export const login = (req, res) => {
+  //test
+};
 
-const q = "SELECT FROM users where username = ?"
+export const logout = (req, res) => {};
 
-db.query(q,[req.body.username], (err,data)=>{
-    if(err) return res.status(500).json(err)
-    if(data.length) return res.status(409).son("User is already taken! ")
-})
+export const register = (req, res) => {
+  //CHECK USER IF EXISTS
 
-const salt = bcrypt.genSaltSync(10);
-const hashedPassword = bcrypt.hashSync(req.body.password, salt)
-    
-}
+  const q = "SELECT * FROM users WHERE username = ?";
 
-export const logout = (req,res) =>{
-    
-}
+  db.query(q, [req.body.username], (err, data) => {
+    if (err) return res.status(500).json(err);
+    if (data.length) return res.status(409).json("User already exists!");
+    //CREATE A NEW USER
+    //Hash the password
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
-export const register = (req,res) =>{
-    
-}
+    const q =
+      "INSERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)";
+
+    const values = [
+      req.body.username,
+      req.body.email,
+      hashedPassword,
+      req.body.name,
+    ];
+
+    db.query(q, [values], (err, data) => {
+      if (err) return res.status(500).json(err);
+      return res.status(200).json("User has been created.");
+    });
+  });
+};
