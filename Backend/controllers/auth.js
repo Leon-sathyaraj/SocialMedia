@@ -1,4 +1,5 @@
 import { db } from "../connect.js";
+import bcrypt from "bcrypt";
 
 export const login = (req, res) => {
   //test

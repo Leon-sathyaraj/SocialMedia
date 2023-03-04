@@ -3,8 +3,8 @@ import mysql from "mysql";
 export const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "leon",
-  database: "socialmedia",
+  password: "dsaewq321@",
+  database: "social",
 });
 
 db.query("SELECT 1 + 1 AS solution", function (error, results, fields) {
