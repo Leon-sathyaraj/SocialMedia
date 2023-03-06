@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Register.scss";
 import axios from "axios";
-
+import "./Register.scss";
 const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -10,7 +9,13 @@ const Register = () => {
     password: "",
     name: "",
   });
-  const [err, setErr] = useState(false);
+
+  const [error, setError] = useState({
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+  });
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -18,29 +23,32 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
     try {
       await axios.post("http://localhost:8800/api/auth/register", inputs);
-    } catch (err) {
-      setErr(true);
+    } catch (error) {
+      setError(true);
     }
   };
 
-  console.log(err)
+  console.log(error);
 
   return (
     <div className="register">
       <div className="card">
         <div className="left">
-          <h1>Friends Book</h1>
-          <p>
-          Welcome to our Friendsbook, where you can connect and share with
+          <h1>
+            {" "}
+            Welcome to our Friendsbook, where you can connect and share with
             friends and family from around the world!
-          </p>
+          </h1>
+          <p>{/* Welcome to Friends Book */}</p>
           <span>Do you have an account?</span>
           <Link to="/login">
+            {" "}
             <button>Login</button>
           </Link>
-        </div>  
+        </div>
         <div className="right">
           <h1>Register</h1>
           <form>
@@ -68,7 +76,7 @@ const Register = () => {
               name="name"
               onChange={handleChange}
             />
-            {err && err}
+            {error && error}
             <button onClick={handleClick}>Register</button>
           </form>
         </div>
