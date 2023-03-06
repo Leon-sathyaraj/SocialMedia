@@ -32,7 +32,7 @@ const Register = () => {
     <div className="register">
       <div className="card">
         <div className="left">
-          <h1>Lama Social.</h1>
+          <h1>Friends Book</h1>
           <p>
           Welcome to our Friendsbook, where you can connect and share with
             friends and family from around the world!
