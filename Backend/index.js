@@ -1,17 +1,24 @@
 import express from "express";
-const app = express();
+import cors from "cors";
+import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
-import cors from "cors";
-import cookieParser from "cookie-parser";
 import relationshipRoutes from "./routes/relationships.js";
+
+const app = express();
+
+// Configure CORS
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+};
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);

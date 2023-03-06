@@ -3,7 +3,7 @@ import mysql from "mysql";
 export const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "dsaewq321@",
+  password: "123456789",
   database: "social",
 });
 

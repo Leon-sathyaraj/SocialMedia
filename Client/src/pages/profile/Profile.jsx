@@ -45,15 +45,15 @@ const Profile = () => {
             </a>
           </div>
           <div className="center">
-            <span>Jane Doe</span>
+            <span>Leon</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span>USA</span>
+                <span>SG</span>
               </div>
               <div className="item">
                 <LanguageIcon />
-                <span>lama.dev</span>
+                <span>Leon</span>
               </div>
             </div>
             <button>follow</button>

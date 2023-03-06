@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { useContext,useState } from "react";
-import { AuthContext } from "../context/auth";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.jsx";
 import "./Login.scss";
 
 const Login = () => {
@@ -10,15 +10,18 @@ const Login = () => {
   });
   const [err, setErr] = useState(null);
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
   const { login } = useContext(AuthContext);
+
   const handleLogin = async (e) => {
-    e.setpreventDefault()
+    e.preventDefault();
     try {
       await login(inputs);
+      navigate("/")
     } catch (err) {
       setErr(err.response.data);
     }
@@ -28,15 +31,12 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>
-            {" "}
-            Welcome to our Friendsbook, where you can connect and share with
+          <p>
+          Welcome to our Friendsbook, where you can connect and share with
             friends and family from around the world!
-          </h1>
-          <p>{/* Welcome to Friends Book */}</p>
+          </p>
           <span>Don't you have an account?</span>
           <Link to="/register">
-            {" "}
             <button>Register</button>
           </Link>
         </div>
@@ -55,7 +55,7 @@ const Login = () => {
               name="password"
               onChange={handleChange}
             />
-            
+            {err && err}
             <button onClick={handleLogin}>Login</button>
           </form>
         </div>
