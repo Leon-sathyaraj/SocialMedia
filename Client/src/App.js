@@ -13,7 +13,6 @@ import {
   Navigate,
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
 } from "react-router-dom";
 
@@ -24,25 +23,23 @@ import {
 
 
 function App() {
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
-  const queryClient = new QueryClient()
-
+  const queryClient = new QueryClient();
 
   const Layout = () => {
     return (
-  <QueryClientProvider client={queryClient}>
-      <div>
-          <div className="theme-dark"></div>
-        <NavBar />
-        <div style={{ display: "flex" }}>
-        <LeftBar />
-        <div style={{ flex: 6 }}>
-          <Outlet />
+      <QueryClientProvider client={queryClient}>
+        <div>
+          <NavBar />
+          <div style={{ display: "flex" }}>
+            <LeftBar />
+            <div style={{ flex: 6 }}>
+              <Outlet />
+            </div>
+            <RightBar />
+          </div>
         </div>
-        <RightBar />
-      </div>
-      </div>
       </QueryClientProvider>
     );
   };
@@ -54,6 +51,7 @@ function App() {
 
     return children;
   };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -63,19 +61,28 @@ function App() {
         </ProtectedRoute>
       ),
       children: [
-        { path: "/", element: <Home /> },
-        { path: "/profile/:id", element: <Profile /> },
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/profile/:id",
+          element: <Profile />,
+        },
       ],
     },
     {
       path: "/login",
       element: <Login />,
     },
-    { path: "/register", element: <Register /> },
+    {
+      path: "/register",
+      element: <Register />,
+    },
   ]);
 
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={router} />
     </div>
   );

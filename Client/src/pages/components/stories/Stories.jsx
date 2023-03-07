@@ -1,48 +1,50 @@
-import React,{useContext} from 'react';
-import '../stories/Stories.scss'
-import { AuthContext } from '../../context/auth';
+import { useContext } from "react";
+import "./Stories.scss"
+import { AuthContext } from "../../context/auth.jsx"
 
 const Stories = () => {
-    const {currentUser} = useContext(AuthContext)
-    // placeholder images
 
-    const stories = [
-        {
-            id:1,
-            name: 'Leon',
-            img: "https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        },
-        {
-            id:2,
-            name: 'Sathya',
-            img: "https://images.pexels.com/photos/15419113/pexels-photo-15419113.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        },
-        {
-            id:3,
-            name: 'Raj',
-            img: "https://images.pexels.com/photos/15419113/pexels-photo-15419113.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        },
-        {
-            id:4,
-            name: 'Thever',
-            img: "https://images.pexels.com/photos/15419113/pexels-photo-15419113.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        },
-    ]
-    return (
-        <div className="stories">
-          <div className="story">
-              <img src={currentUser.profilePic} alt="" />
-              <span>{currentUser.name}</span>
-              <button>+</button>
-            </div>
-          {stories.map(story=>(
-            <div className="story" key={story.id}>
-              <img src={story.img} alt="" />
-              <span>{story.name}</span>
-            </div>
-          ))}
+  const {currentUser} = useContext(AuthContext)
+
+  //TEMPORARY
+  const stories = [
+    {
+      id: 1,
+      name: "Cookie Monster",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmB1zFXJARyKx5aw5GW5Co9YP38-PzZvuP3Q&usqp=CAU",
+    },
+    {
+      id: 2,
+      name: "Bert",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfQW2UzRPjmSGRxdfDqn43srhwFH3--hHsFX3AGw4MzFIxZ-fZZAgLjZtTWdcXTEjHys&usqp=CAU",
+    },
+    {
+      id: 3,
+      name: "Elmo",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0CPAn27JdFxI2rC81uDucTDsDS4EuV62T_g&usqp=CAU",
+    },
+    {
+      id: 4,
+      name: "Big Bird",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZIRaG-BdHMAQc3qw-TxsY0nB5rDsV_LEcQ&usqp=CAU",
+    },
+  ];
+
+  return (
+    <div className="stories">
+      {/* <div className="story">
+          {/* <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span> */}
+          {/* <button>+</button> */}
+        {/* </div> */} 
+      {stories.map(story=>(
+        <div className="story" key={story.id}>
+          <img src={story.img} alt="" />
+          <span>{story.name}</span>
         </div>
-      )
-    }
+      ))}
+    </div>
+  )
+}
 
-export default Stories;
+export default Stories

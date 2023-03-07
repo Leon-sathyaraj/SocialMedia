@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import {useContext} from "react";
 import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";

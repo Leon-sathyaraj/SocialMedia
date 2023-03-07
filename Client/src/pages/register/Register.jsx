@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./Register.scss";
+import axios from "axios";
+
 const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -9,13 +10,7 @@ const Register = () => {
     password: "",
     name: "",
   });
-
-  const [error, setError] = useState({
-    username: "",
-    email: "",
-    password: "",
-    name: "",
-  });
+  const [err, setErr] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -26,26 +21,22 @@ const Register = () => {
 
     try {
       await axios.post("http://localhost:8800/api/auth/register", inputs);
-    } catch (error) {
-      setError(true);
+    } catch (err) {
+      setErr(err.response.data);
     }
   };
 
-  console.log(error);
+  console.log(err)
 
   return (
     <div className="register">
       <div className="card">
         <div className="left">
-          <h1>
-            {" "}
-            Welcome to our Friendsbook, where you can connect and share with
-            friends and family from around the world!
-          </h1>
-          <p>{/* Welcome to Friends Book */}</p>
+          <p>
+     Welcome to Sesame street
+          </p>
           <span>Do you have an account?</span>
           <Link to="/login">
-            {" "}
             <button>Login</button>
           </Link>
         </div>
@@ -76,7 +67,7 @@ const Register = () => {
               name="name"
               onChange={handleChange}
             />
-            {error && error}
+            {err && err}
             <button onClick={handleClick}>Register</button>
           </form>
         </div>

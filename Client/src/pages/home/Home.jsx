@@ -1,16 +1,16 @@
-import './home.scss'
-import Stories from '../components/stories/Stories';
-import Posts from '../components/posts/Posts';
+import Stories from "../components/stories/Stories.jsx"
+import Posts from "../components/posts/Posts.jsx"
+import Share from "../components/share/Share.jsx"
+import "./Home.scss"
 
 const Home = () => {
-    return (
-        <div>
+  return (
+    <div className="home">
+      <Stories/>
+      <Share/>
+      <Posts/>
+    </div>
+  )
+}
 
-<Stories />
-<Posts/>
-
-        </div>
-    );
-};
-
-export default Home;
+export default Home
