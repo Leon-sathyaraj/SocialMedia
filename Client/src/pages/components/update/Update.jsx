@@ -13,6 +13,8 @@ const Update = ({ setOpenUpdate, user }) => {
     name: user.name,
     city: user.city,
     website: user.website,
+    coverPic: user.coverPic,
+    profilePic: user.profilePic
   });
 
   const upload = async (file) => {
