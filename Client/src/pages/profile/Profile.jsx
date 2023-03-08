@@ -10,7 +10,6 @@ import { AuthContext } from "../context/auth.jsx";
 import Update from "../../pages/components/update/Update.jsx";
 import { useState } from "react";
 
-
 const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
   const { currentUser } = useContext(AuthContext);
