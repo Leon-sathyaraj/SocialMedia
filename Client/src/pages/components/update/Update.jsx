@@ -10,9 +10,7 @@ const Update = ({ setOpenUpdate, user }) => {
   const [texts, setTexts] = useState({
     email: user.email,
     password: user.password,
-    name: user.name,
-    city: user.city,
-    website: user.website,
+    name: user.name
   });
 
   const upload = async (file) => {
