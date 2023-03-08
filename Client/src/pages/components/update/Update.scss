@@ -31,6 +31,8 @@
 
       h1 {
         color: lightgrey;
+
+   
       
  
       
@@ -53,7 +55,9 @@
           gap: 10px;
           color: gray;
           font-size: 14px;
-
+          span{
+            color: white
+          }
           .imgContainer {
             position: relative;
             img {
