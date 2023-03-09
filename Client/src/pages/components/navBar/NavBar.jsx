@@ -3,13 +3,11 @@ import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { Email, GridView, NotificationsOutlined } from "@mui/icons-material";
 import { AuthContext } from "../../context/auth";
 
 const NavBar = () => {
@@ -37,7 +35,7 @@ const NavBar = () => {
         <NotificationsOutlinedIcon />
         <div className="user">
           <img
-            src={currentUser.profilePic}
+            src={currentUser.profilePic} // not loading profile image
             alt=""
           />
           <span>{currentUser.name}</span>

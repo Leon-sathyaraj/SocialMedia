@@ -17,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
     setCurrentUser(res.data)
   };
 
-  useEffect(() => {
+  useEffect(() => { // this will help users to stay login even if they close or refresh browser
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
 

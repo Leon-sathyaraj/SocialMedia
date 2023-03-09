@@ -49,7 +49,7 @@ const Update = ({ setOpenUpdate, user }) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-
+  
     //TODO: find a better way to get image URL
     
     let coverUrl;
@@ -57,11 +57,19 @@ const Update = ({ setOpenUpdate, user }) => {
     coverUrl = cover ? await upload(cover) : user.coverPic;
     profileUrl = profile ? await upload(profile) : user.profilePic;
     
-    mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
-    setOpenUpdate(false);
-    setCover(null);
-    setProfile(null);
-  }
+    try {
+      mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
+      setOpenUpdate(false);
+      setCover(null);
+      setProfile(null);
+    } catch (err) {
+      // Rethrow non-MySql errors
+      if (!err.code || !err.message.includes("MySql")) {
+        throw err;
+      }
+    }
+  };
+  
 
   return (
     <div className="update">
