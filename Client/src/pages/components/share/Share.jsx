@@ -10,48 +10,51 @@ const Share = () => {
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState("");
 
-  const upload = async () => {
+  const upload = async () => { 
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await makeRequest.post("/upload", formData);
-      return res.data;
+      const res = await makeRequest.post("/upload", formData); 
+      return res.data; // send the image to const mutation
     } catch (err) {
       console.log(err);
     }
   };
 
   const { currentUser } = useContext(AuthContext);
-
   const queryClient = useQueryClient();
 
-  const mutation = useMutation(
+  const mutation = useMutation( // a async function
     (newPost) => {
       return makeRequest.post("/posts", newPost);
     },
     {
       onSuccess: () => {
-        // Invalidate and refetch
-        queryClient.invalidateQueries(["posts"]);
+        queryClient.invalidateQueries(["posts"]); //refetches posts
       },
     }
   );
 
-  const handleClick = async (e) => {
+  console.log(currentUser.profilePic)
+
+  const handleClick = async (e) => { // sends the image to database and sends back the image and display it in post
     e.preventDefault();
     let imgUrl = "";
     if (file) imgUrl = await upload();
-    mutation.mutate({ desc, img: imgUrl });
+    mutation.mutate({ desc, img: imgUrl }); // sends to database to create data which for this instance, desc,img
     setDesc("");
     setFile(null);
   };
-
   return (
     <div className="share">
       <div className="container">
         <div className="top">
           <div className="left">
-             <img src={"/upload/" + currentUser.profilePic} alt="" />  
+         
+          
+  <img src={"/upload/" + currentUser.profilePic} alt="" />  
+
+
             <input
               type="text"
               placeholder={`What's on your mind ${currentUser.name}?`}

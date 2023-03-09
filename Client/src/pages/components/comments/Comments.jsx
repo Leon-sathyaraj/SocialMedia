@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../../axios.js";
 import moment from "moment";
 
-const Comments = ({ postId }) => {
+const Comments = ({ postId, canDelete }) => {
   const [desc, setDesc] = useState("");
   const { currentUser } = useContext(AuthContext);
 
@@ -16,6 +16,15 @@ const Comments = ({ postId }) => {
   );
 
   const queryClient = useQueryClient();
+
+  const handleDeleteComment = async (commentId) => {
+    try {
+      await makeRequest.delete(`/comments/${commentId}`);
+      queryClient.invalidateQueries(["comments"]);
+    } catch (error) {
+      console.log("Error deleting comment", error);
+    }
+  };
 
   const mutation = useMutation(
     (newComment) => {
@@ -52,7 +61,7 @@ const Comments = ({ postId }) => {
         : isLoading
         ? "loading"
         : data.map((comment) => (
-            <div className="comment">
+            <div className="comment" key={comment.id}>
               <img src={"/upload/" + comment.profilePic} alt="" />
               <div className="info">
                 <span>{comment.name}</span>
@@ -61,6 +70,11 @@ const Comments = ({ postId }) => {
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
+              {canDelete && (
+                <button onClick={() => handleDeleteComment(comment.id)}>
+                  Delete
+                </button>
+              )}
             </div>
           ))}
     </div>

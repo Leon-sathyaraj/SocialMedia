@@ -19,7 +19,7 @@ const NavBar = () => {
           to="/"
           style={{ textDecoration: "none", outline: "none" }} // doesnt seem to work for now
         >
-          <span>FriendsBook</span>
+          <span>Sesame Street</span>
         </Link>
         <HomeOutlinedIcon />
         <DarkModeOutlinedIcon />

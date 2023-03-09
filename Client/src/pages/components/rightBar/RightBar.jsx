@@ -10,10 +10,10 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkr30ssGxNaL_kHQ6q9vPByMqLUxc1XNTEcg&usqp=CAU"
                 alt="userImage"
               />
-              <span>Leon</span>
+              <span>Count Von</span>
             </div>
             <div className="buttons">
               <button> Add Friend</button>
@@ -23,10 +23,10 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo4VyHSh1F_u7_ok3A86P3OelrZunYnVGs4A&usqp=CAU"
                 alt="userImage"
               />
-              <span>Leon</span>
+              <span>Abby</span>
             </div>
             <div className="buttons">
               <button> Add Friend</button>
@@ -39,25 +39,25 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ1l1zKWu9s66DoxadxYCXtJHnPFSBjdI1Mg&usqp=CAU"
                 alt="userImage"
               />
-              <span>Leon</span>
+              <span>Julie</span>
             </div>
             <div className="">
-            1 minute ago
+            12 minutes ago
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvA483j3OEKCeC5Agmj8uHVLrMumGX0kqfNg&usqp=CAU"
                 alt="userImage"
               />
-              <span>Leon</span>
+              <span>Kermit</span>
             </div>
             <div className="">
-1 minute ago
+3 hours ago
             </div>
           </div>
         </div>
@@ -75,10 +75,10 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://i.imgur.com/pdRqH3S_d.webp?maxwidth=520&shape=thumb&fidelity=high"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2voWLAZNHRLy-a96hQaeZ7E4LO9F1MO1xaA&usqp=CAU"
                 alt="userImage"
               />
-              <span>Leon</span>
+              <span>Eernie </span>
             </div>
 
           </div>

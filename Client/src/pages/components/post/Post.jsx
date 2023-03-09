@@ -71,8 +71,21 @@ const Post = ({ post }) => {
   }
 
   const handleDelete = () => {
-    deleteMutation.mutate(post.id);
+    if (post.userId === currentUser.id) {
+      deleteMutation.mutate(post.id);
+    }
   };
+
+  const handleDelete2 = () => {
+    if (canDelete()) {
+      deleteMutation.mutate(post.id);
+    }
+  };
+   
+  const canDelete = () => {
+    return post.userId === currentUser.id;
+  };
+  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -114,13 +127,13 @@ const Post = ({ post }) => {
               onChange={handleInputChange}
               required
             />
-            <input
+            {/* <input
               type="text"
               name="img"
               placeholder="Image URL (optional)"
               value={updatedPost.img}
               onChange={handleInputChange}
-            />
+            /> */}
           </div>
         ) : (
           <>
@@ -129,12 +142,7 @@ const Post = ({ post }) => {
           </>
         )}
         <div className="actions">
-        <div className="action" onClick={() => setCommentOpen(true)}>
-            <TextsmsOutlinedIcon />
-            <span>{data && data.length ? data.length : 0} likes</span>
-
-          </div>
-          <div className="action">
+        <div className="action">
             {data && data.includes(currentUser.id) ? (
               <FavoriteOutlinedIcon
                 className="liked"
@@ -143,14 +151,19 @@ const Post = ({ post }) => {
             ) : (
               <FavoriteBorderOutlinedIcon onClick={handleLike} />
             )}
-            <span>{data ? data.length : 0} likes</span>
+            <span>{data ? data.length : 0} likes</span> 
+        <div className="action" onClick={() => setCommentOpen(true)}>
+            <TextsmsOutlinedIcon />
           </div>
+       
           <div className="action">
             <ShareOutlinedIcon />
             <span>Share</span>
           </div>
         </div>
-        {commentOpen && <Comments postId={post.id} />}
+        </div>
+{commentOpen && <Comments postId={post.id} delete={canDelete} />}
+
       </div>
     </div>
   );

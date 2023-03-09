@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { makeRequest } from "../../axios";
 
 export const AuthContext = createContext();
 
@@ -8,6 +9,21 @@ export const AuthContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("user") || "null")
   );
 
+  useEffect(() => {
+    async function fetchUserData() {
+      if (currentUser && currentUser.id) {
+        try {
+          const res = await makeRequest.get(`/users/find/${currentUser.id}`);
+          console.log(res.data);
+        } catch (err) {
+          console.log(err);
+        }
+      } else {
+        console.log("User not logged in");
+      }
+    }
+    fetchUserData();
+  }, [currentUser]);
 
   const login = async (inputs) => {
     const res = await axios.post("http://localhost:8800/api/auth/login", inputs, {
