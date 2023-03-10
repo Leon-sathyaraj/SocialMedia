@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../../axios.js";
 import moment from "moment";
 
-const Comments = ({ postId, canDelete }) => {
+const Comments = ({ postId, postUserId, currentUserId}) => {
   const [desc, setDesc] = useState("");
   const { currentUser } = useContext(AuthContext);
 
@@ -70,8 +70,8 @@ const Comments = ({ postId, canDelete }) => {
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
-              {canDelete && (
-                <button onClick={() => handleDeleteComment(comment.id)}>
+              {postUserId === currentUserId && (
+                <button className="ondelete" onClick={() => handleDeleteComment(comment.id)}>
                   Delete
                 </button>
               )}

@@ -11,7 +11,7 @@ export const getPosts = (req, res) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     console.log(userId);
-
+// retrieve post once jwt is verified with user
     const q =
       userId !== "undefined"
         ? `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId) WHERE p.userId = ? ORDER BY p.createdAt DESC`

@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import { useContext } from "react";
 import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -11,7 +11,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { AuthContext } from "../../context/auth";
 
 const NavBar = () => {
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className="navbar">
       <div className="left">
@@ -35,7 +35,7 @@ const NavBar = () => {
         <NotificationsOutlinedIcon />
         <div className="user">
           <img
-            src={currentUser.profilePic} // not loading profile image
+            src={"/upload/" + currentUser.profilePic} // not loading profile image
             alt=""
           />
           <span>{currentUser.name}</span>

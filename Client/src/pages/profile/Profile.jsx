@@ -14,14 +14,16 @@ const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
-  const userId = parseInt(useLocation().pathname.split("/")[2]);
+  const userId = parseInt(useLocation().pathname.split("/")[2]); 
+  // gets user id from current URL path using useLocation hook and 
+  //second element is selected which represents the user ID
 
   const { isLoading, data } = useQuery(["user"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
       return res.data;
     })
   );
-
+//uses useQuery hook to fetch user data from server using makeRequest function. Ids obtained from url
   const { isLoading: rIsLoading, data: relationshipData } = useQuery(
     ["relationship"],
     () =>
@@ -29,7 +31,7 @@ const Profile = () => {
         return res.data;
       })
   );
-
+// check relationship data if its in the array
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -73,7 +75,7 @@ const Profile = () => {
                 {rIsLoading ? (
                   "loading"
                 ) : userId === currentUser.id ? (
-                  <button onClick={() => setOpenUpdate(true)}>update</button>
+                  <button onClick={() => setOpenUpdate(true)}>Update</button>
                 ) : (
                   <button onClick={handleFollow}>
                     {relationshipData.includes(currentUser.id)

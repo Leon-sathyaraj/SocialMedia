@@ -19,6 +19,16 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
 
+    if (!inputs.username || !inputs.email || !inputs.password || !inputs.name) {
+      setErr("All fields must be filled.");
+      return;
+    }
+
+    if (!inputs.email.endsWith("@gmail.com")) {
+      setErr("Please enter a valid Gmail address.");
+      return;
+    }
+
     try {
       await axios.post("http://localhost:8800/api/auth/register", inputs);
     } catch (err) {
@@ -26,15 +36,13 @@ const Register = () => {
     }
   };
 
-  console.log(err)
+  console.log(err);
 
   return (
     <div className="register">
       <div className="card">
         <div className="left">
-          <p>
-     Welcome to Sesame street
-          </p>
+          <p>Welcome to Sesame street</p>
           <span>Do you have an account?</span>
           <Link to="/login">
             <button>Login</button>
