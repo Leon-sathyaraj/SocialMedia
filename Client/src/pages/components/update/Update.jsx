@@ -11,8 +11,6 @@ const Update = ({ setOpenUpdate, user }) => {
     email: user.email,
     password: user.password,
     name: user.name,
-    city: user.city,
-    website: user.website,
     coverPic: user.coverPic,
     profilePic: user.profilePic
   });
