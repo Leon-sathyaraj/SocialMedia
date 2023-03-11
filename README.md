@@ -22,12 +22,8 @@ Delete own comments and other users' comments
 Like other users' posts
 Protected routes - only logged in users can access home page
 
-Features that I would like to add:
-
-1) User' stories and
-2) Socket.io for users to message each other and receive it in real time
-
-
+Mysql dumb can be found in this directory:
+Client\mysqldump
 
 
 ![database](https://user-images.githubusercontent.com/115027854/224471893-5807364a-c7c8-4137-9614-075de2fb6112.png)
@@ -61,3 +57,13 @@ User that creates a post is able to;
 4) Able to delete their and others comments
 
 Post that belongs to the user that post are able to delete comments. Other users will not have the function to do so
+
+Features that I would like to add:
+
+1) User' stories and
+2) Socket.io for users to message each other and receive it in real time
+
+Features that are broken:
+
+1) Comments Database has issues.
+2) The ability for User to update their own post's desc and change image
