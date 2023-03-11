@@ -49,7 +49,7 @@ User that creates a post is able to;<br>
 2) Add a image to their Post (by clicking on the button in 3)<br>
 <br>
 <br>
-![post and comment](https://user-images.githubusercontent.com/115027854/224472828-072443bb-d346-4074-89d9-11af31ebc0af.png)<br>
+![post and comment](https://user-images.githubusercontent.com/115027854/224473665-1e95f7cf-9b72-4a52-a32a-5d30a44e66f6.png)<br>
 <br>
 Post by Users are able to;<br>
 <br>
@@ -61,7 +61,8 @@ Post by Users are able to;<br>
 Post that belongs to the user that post are able to delete comments. Other users will not have the function to do so<br>
 <br>
 <br>
-![deleting post and comment](https://user-images.githubusercontent.com/115027854/224472865-6d2cb161-5b2c-42d1-8ee7-8ec6bcc21333.png)<br>
+![deleting post and comment](https://user-images.githubusercontent.com/115027854/224473656-268d143a-d95d-44e8-b7a4-82aa39e956fb.png)
+<br>
 <br>
 <br>
 Features that I would like to add:<br>
