@@ -38,7 +38,7 @@ Users are able to update their cover and profile picture
 
 
 Users are able to follow other users.
-Once a User followed another User, the posts of the followed user will be fetched in follower's home page.
+Once a User followed another User, the posts of the followed user will be fetched in the follower's home page.
 
 
 ![follwed and fetch posts data with comments](https://user-images.githubusercontent.com/115027854/224472786-f82438ff-f236-4bed-b87d-44cf787a2cd6.png)
