@@ -51,6 +51,7 @@ User that creates a post is able to;
 
 ![post and comment](https://user-images.githubusercontent.com/115027854/224472828-072443bb-d346-4074-89d9-11af31ebc0af.png)
 
+Post by Users are able to;
 
 1) Delete their own post entirely
 2) like their own post
