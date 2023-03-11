@@ -74,3 +74,7 @@ Features that are broken:<br>
 <br>
 1) Comments Database has issues.<br>
 2) The ability for User to update their own post's desc and change image<br>
+<br>
+Contact<br>
+<br>
+If you have any questions or comments about this project, please feel free to contact me at sathyarajthevar@gmail.com
